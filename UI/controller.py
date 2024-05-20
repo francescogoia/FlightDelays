@@ -15,3 +15,13 @@ class Controller:
             return
         self._view.txt_result.controls.append(ft.Text(f"Hello, {name}!"))
         self._view.update_page()
+
+
+    def handleAnalizza(self, e):
+        pass
+
+    def handleConnessi(self, e):
+        pass
+
+    def handleCercaItinerario(self, e):
+        pass
