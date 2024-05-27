@@ -91,13 +91,14 @@ class Model:
         # verificare che prziale sia una possibile soluzione
         # verificare che parziale sia meglio di best
         # esco
+        if len(parziale) == t + 1:      # in parziale metto i nodi
+            return
         if self._getObjFun(parziale) > self._bestObjFunction and parziale[-1] == target:
             self._bestObjFunction = self._getObjFun(parziale)
             self._bestPath = copy.deepcopy(parziale)
-            return
 
-        if len(parziale) == t + 1:      # in parziale metto i nodi
-            return
+
+
             # posso ancora aggiungere nodi
             # prendo i vicini e provo ad aggiungerli
             # ricorsione
