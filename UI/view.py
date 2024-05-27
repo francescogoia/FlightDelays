@@ -26,17 +26,19 @@ class View(ft.UserControl):
         # row1
         self._txtInNumC = ft.TextField(label = "Num compagnie", width=250)
         self._btnAnalizza = ft.ElevatedButton(text="Analizza aeroporti", width=250, on_click=self._controller.handleAnalizza)
-        self._btnConnessi = ft.ElevatedButton(text="Aeroporti conssessi", on_click=self._controller.handleConnessi)
-        row1 = ft.Row([self._txtInNumC, self._btnAnalizza, self._btnConnessi], alignment=ft.MainAxisAlignment.CENTER)
+        self._btnConnessi = ft.ElevatedButton(text="Aeroporti connessi", on_click=self._controller.handleConnessi, disabled=True)
+        self._btnTestConnessione = ft.ElevatedButton(text="Test connessione", on_click=self._controller.handleTestConnessione,
+                                              disabled=True)
+        row1 = ft.Row([self._txtInNumC, self._btnAnalizza, self._btnConnessi, self._btnTestConnessione], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
-        self._DD_aeroprtiPartenza = ft.Dropdown(label="Aeroporti partenza")
-        self._DD_aeroprtiArrivo = ft.Dropdown(label="Aeroporti arrivo")
+        self._DD_aeroprtiPartenza = ft.Dropdown(label="Aeroporti partenza", disabled=True)
+        self._DD_aeroprtiArrivo = ft.Dropdown(label="Aeroporti arrivo", disabled=True)
         row2 = ft.Row([self._DD_aeroprtiPartenza, self._DD_aeroprtiArrivo], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
 
-        self._txtInNumTratte = ft.TextField(label="Numero tratte max", width=250)
-        self._btnCercaItinerario = ft.ElevatedButton(text="Cerca itineriario", on_click=self._controller.handleCercaItinerario)
+        self._txtInNumTratte = ft.TextField(label="Numero tratte max", width=250, disabled=True)
+        self._btnCercaItinerario = ft.ElevatedButton(text="Cerca itinerario", on_click=self._controller.handleCercaItinerario, disabled=True)
         row3 = ft.Row([self._txtInNumTratte, self._btnCercaItinerario], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row3)
 

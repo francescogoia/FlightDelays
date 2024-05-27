@@ -11,9 +11,8 @@ class Airport:
     LATITUDE: float
     LONGITUDE: float
     TIMEZONE_OFFSET: float
-
     def __str__(self):
-        return f"{self.AIRPORT}"
+        return f"{self.ID}-{self.IATA_CODE}-{self.AIRPORT}"
 
     def __hash__(self):
         return hash(self.ID)
